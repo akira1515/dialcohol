@@ -46,7 +46,7 @@ export default function Home() {
     <Box sx={{py:8, display:"flex", flexDirection:"column", alignItems:"center"}}>
       <Header />
       {questions.map((question:Question) => (
-        <Box sx={{mt:10,  mx:"auto", width: '100%', maxWidth:"800px",}}>
+        <Box key={question.id} sx={{mt:10,  mx:"auto", width: '100%', maxWidth:"800px",}}>
         <Typography sx={{
             fontSize: "2rem", 
             fontWeight:"bold", 
