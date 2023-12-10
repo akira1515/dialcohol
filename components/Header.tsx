@@ -14,7 +14,7 @@ const Header = () => {
             justifyContent: 'center',
             height: 64,
             width: '100vw',
-            fontSize: '2rem',
+            fontSize: '1.7rem',
             padding: '0 24px',
             color: "black",
             backgroundColor: '#fff',
