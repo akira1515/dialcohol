@@ -57,7 +57,7 @@ export default function Home() {
       setTimeout(() => {
         setIsLoading(false); // ロード終了
       router.push(`/results?personalityType=${encodeURIComponent(type)}&description=${encodeURIComponent(description)}`);
-      }, 3000);
+      }, 2700);
     } else {
       setShowErrorMessage(true);
     }
