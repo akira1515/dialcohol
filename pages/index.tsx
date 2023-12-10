@@ -35,11 +35,13 @@ export default function Home() {
   };
   
 
-  const [message, setMessage] = useState<string>("")  
+  const [message, setMessage] = useState<string>("");
+  const [personalityType, setPersonalityType] = useState<string>("");
 
   const handleSubmit = () => {
     const personality = calculatePersonality();
-    setMessage(`あなたの性格タイプは\n${personality} です！`);
+    setPersonalityType(personality);
+    setMessage(`あなたの性格タイプは`);
   }
 
   return (
@@ -90,10 +92,19 @@ export default function Home() {
       <Typography sx={{
               mt:4, 
               fontSize:"2rem", 
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
               '@media (max-width: 500px)': {
               fontSize: "1.2rem"
               }
-            }}>{message}</Typography>
+            }}>
+              {message}
+              {personalityType && (
+                <><br /><span style={{ fontSize: "2rem" }}>{personalityType}</span></>
+              )}
+            </Typography>
     </Box>
   )
 }
