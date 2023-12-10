@@ -51,7 +51,7 @@ export default function Home() {
             fontSize: "2rem", 
             fontWeight:"bold", 
             '@media (max-width: 500px)': {
-              fontSize: "1.5rem"
+              fontSize: "1.2rem"
             }
           }}>Q, {question.textQuestion}</Typography>
         <Box
