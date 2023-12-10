@@ -11,6 +11,7 @@ export default function Home() {
 
   const handleBoxClick = (questionId: number, value: number) => {
     setSelectedBox(prev => ({ ...prev, [questionId]: value }));
+    setShowErrorMessage(false);
   }
 
 
@@ -38,14 +39,25 @@ export default function Home() {
   const [message, setMessage] = useState<string>("");
   const [personalityType, setPersonalityType] = useState<string>("");
   const [isDiagnosed, setIsDiagnosed] = useState(false);
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
+
 
 
   const handleSubmit = () => {
-    const personality = calculatePersonality();
-    setPersonalityType(personality);
-    setMessage(`あなたの性格タイプは`);
-    setIsDiagnosed(true);
+    // 未回答の質問があるかチェック
+    const isAllAnswered = !Object.values(selectedBox).some(score => score === null);
+    
+    if (isAllAnswered) {
+      const personality = calculatePersonality();
+      setPersonalityType(personality);
+      setMessage(`あなたの性格タイプは`);
+      setIsDiagnosed(true);
+      setShowErrorMessage(false); // エラーメッセージを非表示に
+    } else {
+      setShowErrorMessage(true); // エラーメッセージを表示
+    }
   }
+  
   const handleReset = () => {
     setSelectedBox(questions.reduce((prev, curr) => ({ ...prev, [curr.id]: null }), {}));
     setMessage("");
@@ -94,7 +106,7 @@ export default function Home() {
       ))}
       {!isDiagnosed && (
       <Button variant="contained" sx={{
-              fontSize: '2rem', 
+              fontSize: '1.4rem', 
               mt:4, 
               width:"30%", 
               '@media (max-width: 500px)': {
@@ -102,19 +114,14 @@ export default function Home() {
               }
             }} onClick={handleSubmit}>診断する</Button>
       )}
-      {isDiagnosed && (
-      <Button variant="contained" sx={{ 
-        fontSize: '2rem', 
-        mt: 2, 
-        width: "30%", 
-        '@media (max-width: 500px)': {
-          fontSize: "1.2rem"
-        }
-      }} onClick={handleReset}>やり直す</Button>
-    )}
+      {showErrorMessage && (
+      <Typography sx={{ color: 'red', mt: 2 }}>
+        全ての問いに回答してください
+      </Typography>
+      )}
       <Typography sx={{
               mt:4, 
-              fontSize:"2rem", 
+              fontSize:"1.3rem", 
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -125,9 +132,19 @@ export default function Home() {
             }}>
               {message}
               {personalityType && (
-                <><br /><span style={{ fontSize: "2rem" }}>{personalityType}</span></>
+                <><br /><span style={{ fontSize: "2rem", fontWeight: "bold" }}>{personalityType}</span></>
               )}
             </Typography>
+            {isDiagnosed && (
+      <Button variant="contained" sx={{ 
+        fontSize: '1.4rem', 
+        mt: 2, 
+        width: "30%", 
+        '@media (max-width: 500px)': {
+          fontSize: "1.2rem"
+        }
+      }} onClick={handleReset}>やり直す</Button>
+    )}
     </Box>
   )
 }
