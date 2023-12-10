@@ -18,7 +18,7 @@ const CircleBox:React.FC<Props> = ({ onClick, selected, text }) => {
                 alignItems: 'center',
                 fontSize: '2rem',
                 border: '2px solid gray',
-                backgroundColor: selected ? 'lightgray' : 'transparent',
+                backgroundColor: selected ? '#d4a017' : 'transparent',
                 cursor:"pointer",
                 '@media (max-width: 500px)': {
                     fontSize: "1.1rem"
