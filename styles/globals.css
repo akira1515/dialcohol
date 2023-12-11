@@ -3,25 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 33, 33, 33;
-    --background-end-rgb: 33, 33, 33;
-  }
+  --foreground-rgb: 0, 0, 0; /* 文字色を黒に設定 */
+  --background-start-rgb: 251, 240, 232; /* 背景の開始色を #FBF0E8 に設定 */
+  --background-end-rgb: 251, 240, 232; /* 背景の終了色を #FBF0E8 に設定 */
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--foreground-rgb)); /* 文字色を適用 */
+  background: rgb(var(--background-start-rgb)); /* 単色の背景を適用 */
 }
