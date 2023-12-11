@@ -57,8 +57,7 @@ export default function Home() {
       setIsLoading(true); // ロード開始
       const { type, description, image } = calculatePersonality();
       setTimeout(() => {
-        setIsLoading(false); // ロード終了
-      router.push(`/results?personalityType=${encodeURIComponent(type)}&description=${encodeURIComponent(description)}&image=${encodeURIComponent(image)}`);
+        router.push(`/results?personalityType=${encodeURIComponent(type)}&description=${encodeURIComponent(description)}&image=${encodeURIComponent(image)}`);
       }, 2700);
     } else {
       setShowErrorMessage(true);
