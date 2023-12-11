@@ -56,20 +56,12 @@ const Results = () => {
         名刺をXで投稿してくれた人の中から<br />抽選でクーポンをプレゼント！
       </Typography>
       <Button
-        variant="contained" sx={{ color:'black', fontSize: '1.4rem', mt: 2, width: "30%", '&:hover': {
-          backgroundColor: '#F9DF0F'
-        }, '@media (max-width: 500px)': {fontSize: "1.2rem",  '&:hover': {
-          backgroundColor: '#F9DF0F'
-        }} }}
+        variant="contained" sx={{ color:'white', fontSize: '1.4rem', mt: 2, width: "30%", '@media (max-width: 500px)': {fontSize: "1.2rem"} }}
         onClick={() => window.open(twitterShareUrl, '_blank')}
       >
         𝕏で共有
       </Button>
-      <Button variant="contained" sx={{ color:'black', fontSize: '1.4rem', mt: 4, width: "30%", '&:hover': {
-            backgroundColor: '#F9DF0F'
-          }, '@media (max-width: 500px)': {fontSize: "1.2rem",  '&:hover': {
-            backgroundColor: '#F9DF0F'
-          }} }} onClick={handleReset}>
+      <Button variant="contained" sx={{ color:'white', fontSize: '1.4rem', mt: 4, width: "30%", '@media (max-width: 500px)': {fontSize: "1.2rem"} }} onClick={handleReset}>
         やり直す
       </Button>
     </Box>

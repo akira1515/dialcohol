@@ -107,11 +107,7 @@ export default function Home() {
           </Box>
         ))}
         {!showErrorMessage && (
-          <Button variant="contained" sx={{ color:'black', fontSize: '1.4rem', mt: 4, width: "30%", '&:hover': {
-            backgroundColor: '#F9DF0F'
-          },'@media (max-width: 500px)': { fontSize: "1.2rem",  '&:hover': {
-            backgroundColor: '#F9DF0F'
-          } }}} onClick={handleSubmit}>
+          <Button variant="contained" sx={{ color:'white', fontSize: '1.4rem', mt: 4, width: "30%",'@media (max-width: 500px)': { fontSize: "1.2rem" }}} onClick={handleSubmit}>
             診断する
           </Button>
         )}
