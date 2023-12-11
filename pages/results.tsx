@@ -26,7 +26,7 @@ const Results = () => {
   };
 
   const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-    `【酒癖診断】\n酒癖タイプは「 ${personalityType} 」でした！\nURL : https://dialcohol.vercel.app/`
+    `【酒癖診断】\n酒癖タイプは「 ${personalityType} 」でした！\nURL : https://dialcohol.vercel.app/ \n#飲みの場ではこんな人診断\n#なとり`
   )}`;
   return (
     <Box sx={{ py: 8, display: "flex", flexDirection: "column", alignItems: "center" }}>
@@ -41,7 +41,7 @@ const Results = () => {
         {description && (
           <span style={{ fontSize: "1rem", margin: "5px 30px", width: "70%" }}>{description}</span>
         )}
-        
+
       </Typography>
       <Button
         variant="contained" sx={{ fontSize: '1.4rem', mt: 4, width: "30%", '@media (max-width: 500px)': {fontSize: "1.2rem"} }}
