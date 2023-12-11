@@ -30,7 +30,7 @@ const Results = () => {
   };
 
   const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-    `【酒癖診断】\n酒癖タイプは「 ${personalityType} 」でした！\nURL : https://dialcohol.vercel.app/ \n#飲みの場ではこんな人診断\n#なとり`
+    `【診断結果】\n飲みの場では「 ${personalityType} 」のような人でした！\nURL : https://dialcohol.vercel.app/ \n#飲みの場ではこんな人名刺\n#なとり`
   )}`;
   return (
     <Box sx={{ py: 8, display: "flex", flexDirection: "column", alignItems: "center" }}>
