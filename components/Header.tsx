@@ -14,7 +14,7 @@ const Header = () => {
             justifyContent: 'center',
             height: 64,
             width: '100vw',
-            fontSize: '1.7rem',
+            fontSize: '1.5rem',
             padding: '0 24px',
             color: "black",
             backgroundColor: '#fff',
@@ -22,7 +22,7 @@ const Header = () => {
             zIndex: 10,
         }}
     >
-        酒癖診断🍻
+        飲みの場ではこんな人診断🍻
     </Box>
     )
     }
