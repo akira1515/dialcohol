@@ -27,17 +27,19 @@ export default function Home() {
     if (averageScore <= 1.49) {
       return {
         type: 'なめらかチータラ', 
-        description: '穏やかで落ち着いた雰囲気を持ち、周囲に安心感を与えるタイプです。物事に動じない冷静さと、深く考える傾向があります。周囲の騒がしさにも巻き込まれず、自分のペースを保つことができるため、バランスの取れた判断力を持ち合わせています。一見控えめに見えるかもしれませんが、必要な時にはしっかりと自分の意見を持っています。'
+        description: '穏やかで落ち着いた雰囲気を持ち、周囲に安心感を与えるタイプです。物事に動じない冷静さと、深く考える傾向があります。周囲の騒がしさにも巻き込まれず、自分のペースを保つことができるため、バランスの取れた判断力を持ち合わせています。一見控えめに見えるかもしれませんが、必要な時にはしっかりと自分の意見を持っています。',
+        image: '/nameraka-chitara.png'
       };
       
     } else if (averageScore <= 3.00) {
       return {
         type: 'ジャッキーカルパス',
-        description: '常にエネルギッシュで人々を楽しませる天性の持ち主です。社交的でフレンドリー、場の雰囲気を明るくするのが得意で、どんな集まりでも中心人物になります。話術に長け、ユーモアを交えながら周囲を引き込むことができるため、人々は彼らの周りに自然と集まってきます。時にはやや騒がしいと感じられることもありますが、そのエネルギーとポジティブな姿勢は、多くの人々にとって魅力的に映ります。'
+        description: '常にエネルギッシュで人々を楽しませる天性の持ち主です。社交的でフレンドリー、場の雰囲気を明るくするのが得意で、どんな集まりでも中心人物になります。話術に長け、ユーモアを交えながら周囲を引き込むことができるため、人々は彼らの周りに自然と集まってきます。時にはやや騒がしいと感じられることもありますが、そのエネルギーとポジティブな姿勢は、多くの人々にとって魅力的に映ります。',
+        image: '/jacky-karupasu.png'
       };
       
     } else {
-      return { type: '未定義のパーソナリティ', description: '' };
+      return { type: '未定義のパーソナリティ', description: '', image:'' };
     }
   };
 
@@ -53,10 +55,10 @@ export default function Home() {
   
     if (isAllAnswered) {
       setIsLoading(true); // ロード開始
-      const { type, description } = calculatePersonality();
+      const { type, description, image } = calculatePersonality();
       setTimeout(() => {
         setIsLoading(false); // ロード終了
-      router.push(`/results?personalityType=${encodeURIComponent(type)}&description=${encodeURIComponent(description)}`);
+      router.push(`/results?personalityType=${encodeURIComponent(type)}&description=${encodeURIComponent(description)}&image=${encodeURIComponent(image)}`);
       }, 2700);
     } else {
       setShowErrorMessage(true);

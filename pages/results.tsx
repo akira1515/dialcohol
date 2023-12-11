@@ -7,16 +7,20 @@ const Results = () => {
   const router = useRouter();
   const [personalityType, setPersonalityType] = useState('');
   const [description, setDescription] = useState('');
+  const [image, setImage] = useState('');
 
   useEffect(() => {
     const type = router.query.personalityType;
     const typeDescription = router.query.description;
+    const typeImage = router.query.image;
   
-    if (type && typeDescription) {
+    if (type && typeDescription && typeImage) {
       const decodedType = Array.isArray(type) ? type[0] : decodeURIComponent(type);
       const decodedDescription = Array.isArray(typeDescription) ? typeDescription[0] : decodeURIComponent(typeDescription);
+      const decodedImage = Array.isArray(typeImage) ? typeImage[0] : decodeURIComponent(typeImage);
       setPersonalityType(decodedType);
       setDescription(decodedDescription);
+      setImage(decodedImage);
     }
   }, [router.query]);
 
@@ -32,14 +36,19 @@ const Results = () => {
     <Box sx={{ py: 8, display: "flex", flexDirection: "column", alignItems: "center" }}>
       <Header />
       <Typography sx={{ mt: 4, fontSize: "1.3rem", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-        あなたの酒癖タイプは<br />
+        あなたは飲みの場では<br />
         {personalityType && (
           <span style={{ fontSize: "2rem", fontWeight: "bold" }}>{personalityType}</span>
         )}
+        <span style={{ display: "block" }}>のような人！</span>
         <br /><br />
         〜飲みの場ではこんな人です〜<br />
         {description && (
           <span style={{ fontSize: "1rem", margin: "5px 30px", width: "70%" }}>{description}</span>
+        )}
+        <br />
+        {description && (
+          <img src={image} style={{ width: "70%"}}/>
         )}
 
       </Typography>
