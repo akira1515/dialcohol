@@ -42,7 +42,7 @@ const Results = () => {
         )}
         <span style={{ display: "block" }}>のような人！</span>
         <br />
-        {description && (
+        {image && (
           <img src={image} style={{ width: "280px"}}/>
         )}
         <br /><br />
@@ -64,6 +64,21 @@ const Results = () => {
       <Button variant="contained" sx={{ color:'white', fontSize: '1.4rem', mt: 4, width: "30%", '@media (max-width: 500px)': {fontSize: "1.2rem"} }} onClick={handleReset}>
         やり直す
       </Button>
+
+      <Typography sx={{ mt: 4, fontSize: "1.3rem", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+      {image && (
+          <img src="/product-nameraka-chitara.png" style={{ width: "100px"}}/>
+        )}
+        <div  style={{ display:'flex',marginLeft: "15px", flexDirection:'column', alignItems:'center'}}>
+          <h2>なめらかチータラとは</h2>
+          <p style={{ fontSize: "12px"}}>
+            スーパーやコンビニエンスストアの<br />
+            冷蔵のチーズコーナーで<br />
+            販売されているチータラ。<br />
+            なめらかな口解け食感。
+          </p>
+        </div>
+      </Typography>
     </Box>
   );
 };
