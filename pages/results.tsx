@@ -65,7 +65,7 @@ const Results = () => {
         やり直す
       </Button>
 
-      <Typography sx={{ mt: 4, fontSize: "1.3rem", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+      <Typography sx={{ mt: 6, fontSize: "1.3rem", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
       {image && (
           <img src="/product-nameraka-chitara.png" style={{ width: "100px"}}/>
         )}
