@@ -3,12 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0; /* 文字色を黒に設定 */
-  --background-start-rgb: 251, 240, 232; /* 背景の開始色を #FBF0E8 に設定 */
-  --background-end-rgb: 251, 240, 232; /* 背景の終了色を #FBF0E8 に設定 */
+  --foreground-rgb: 255, 255, 255; /* 明るい文字色 */
+  --background-rgb: 37, 37, 37; /* ダークモードの背景色 "#121212" */
 }
 
 body {
-  color: rgb(var(--foreground-rgb)); /* 文字色を適用 */
-  background: rgb(var(--background-start-rgb)); /* 単色の背景を適用 */
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
 }

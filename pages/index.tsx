@@ -4,6 +4,8 @@ import { Question, questions } from "@/data/data";
 import { Box, Typography, Button } from "@mui/material";
 import { useState } from "react";
 import { useRouter } from 'next/router';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
 
 export default function Home() {
   const router = useRouter();
@@ -44,8 +46,8 @@ export default function Home() {
   };
 
   const LoadingScreen = () => (
-    <div style={{ display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <img src="/beer-loding.png"/>
+    <div style={{ display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
+      <img src="/beer-loading.gif"/>
       <Typography>診断中・・・</Typography>
     </div>
   );  
@@ -58,11 +60,66 @@ export default function Home() {
       const { type, description, image } = calculatePersonality();
       setTimeout(() => {
         router.push(`/results?personalityType=${encodeURIComponent(type)}&description=${encodeURIComponent(description)}&image=${encodeURIComponent(image)}`);
-      }, 2700);
+      }, 3000);
     } else {
       setShowErrorMessage(true);
     }
   }
+  const fadeInUpAnimation = (delay) => ({
+    '@keyframes fadeInUp': {
+      '0%': {
+        opacity: 0,
+        transform: 'translateY(20px)'
+      },
+      '100%': {
+        opacity: 1,
+        transform: 'translateY(0)'
+      }
+    },
+    animation: `fadeInUp 1s ease-out ${delay}s forwards`,
+    opacity: 0
+  });
+
+    // 各行に適用するスタイルを生成
+  const Line = ({ children, delay }) => (
+    <Typography
+      component="span"
+      display="block" // 各行をブロック要素にする
+      sx={{
+        mb: 10, // 行間の隙間
+        textAlign: 'center',
+        whiteSpace: 'pre-line',
+        lineHeight: '1.5',
+        fontSize: '20px',
+        ...fadeInUpAnimation(delay), // アニメーション適用
+      }}
+    >
+      {children}
+    </Typography>
+  );
+
+    // アニメーションのスタイルを定義
+  const arrowBounceAnimation = {
+    '@keyframes arrowBounce': {
+      '0%': {
+        transform: 'translateY(0)'
+      },
+      '50%': {
+        transform: 'translateY(-10px)'
+      },
+      '100%': {
+        transform: 'translateY(0)'
+      }
+    },
+    animation: 'arrowBounce 2s ease-in-out infinite' // 2秒間の無限ループ
+  };
+
+  const ScrollArrow = () => (
+    <Box sx={{ ...arrowBounceAnimation }}>
+      <KeyboardArrowDownIcon fontSize="large" />
+    </Box>
+  );
+  
 
   return (
     <Box sx={{ px: 1, py: 8, display: "flex", flexDirection: "column", alignItems: "center" }}>
@@ -71,10 +128,18 @@ export default function Home() {
       <LoadingScreen />
     ) : (
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100vh' }}>
+          <Line delay={0.5}>飲みの場で変浪するあなた、、</Line>
+          <Line delay={1.5}>周りからどう映る？</Line>
+          <Line delay={2.5}>引かれてしまう前に</Line>
+          <Line delay={3.5}>酒癖名刺を作成して共有しておこう</Line>
+          <Line delay={4.0}><ScrollArrow /></Line>
+        </Box>
+
         {questions.map((question:Question, index: number) => (
           <Box key={question.id} sx={{mt:10,  mx:"auto", width: '100%', maxWidth:"800px",}}>
           <Typography sx={{
-              fontSize: "2rem", 
+              fontSize: "1.5rem", 
               fontWeight:"bold", 
               '@media (max-width: 500px)': {
                 fontSize: "1.2rem"
