@@ -36,7 +36,7 @@ const Results = () => {
     <Box sx={{ py: 8, display: "flex", flexDirection: "column", alignItems: "center" }}>
       <Header />
       <Typography sx={{ mt: 4, fontSize: "1.3rem", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-        あなたは飲みの場では<br />
+        飲みの場でのあなたは<br />
         {personalityType && (
           <span style={{ fontSize: "2rem", fontWeight: "bold" }}>{personalityType}</span>
         )}
@@ -48,7 +48,7 @@ const Results = () => {
         <br /><br />
         〜飲みの場ではこんな人です〜<br />
         {description && (
-          <span style={{ fontSize: "1rem", margin: "5px 30px", width: "70%" }}>{description}</span>
+          <Typography sx={{ fontSize: "1rem", margin: "5px 30px", width: "50%", '@media (max-width: 500px)': {width: "70%"} }}>{description}</Typography>
         )}
 
       </Typography>

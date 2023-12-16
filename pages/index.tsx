@@ -144,10 +144,10 @@ export default function Home() {
               '@media (max-width: 500px)': {
                 fontSize: "1.2rem"
               }
-            }}>Q{index + 1}, {question.textQuestion}</Typography>
+            }}>Q{index + 1}<br/>{question.textQuestion}</Typography>
           <Box
             sx={{
-              mt:10,
+              mt:5,
               mx:"auto",
               display: 'grid',
               gridTemplateColumns: 'repeat(2, 1fr)',

@@ -16,8 +16,8 @@ const Header = () => {
             width: '100vw',
             fontSize: '1.5rem',
             padding: '0 24px',
-            color: "black",
-            backgroundColor: '#fff',
+            // color: "black",
+            backgroundColor: 'rgba(33, 33, 33)',
             boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
             zIndex: 10,
         }}
