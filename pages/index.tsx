@@ -46,7 +46,7 @@ export default function Home() {
   };
 
   const LoadingScreen = () => (
-    <div style={{ display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
+    <div style={{ display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'center', height: 'calc(100vh - 64px)', marginTop: '64px',}}>
       <img src="/beer-loading.gif"/>
       <Typography>診断中・・・</Typography>
     </div>

@@ -48,7 +48,7 @@ const Results = () => {
         <br /><br />
         〜飲みの場ではこんな人です〜<br />
         {description && (
-          <Typography sx={{ fontSize: "1rem", margin: "5px 30px", width: "50%", '@media (max-width: 500px)': {width: "70%"} }}>{description}</Typography>
+          <Typography sx={{ fontSize: "1rem", margin: "15px 30px", width: "50%", '@media (max-width: 500px)': {width: "70%"} }}>{description}</Typography>
         )}
 
       </Typography>
@@ -65,19 +65,38 @@ const Results = () => {
         やり直す
       </Button>
 
-      <Typography sx={{ mt: 6, fontSize: "1.3rem", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
-      {image && (
-          <img src="/product-nameraka-chitara.png" style={{ width: "100px"}}/>
-        )}
-        <div  style={{ display:'flex',marginLeft: "15px", flexDirection:'column', alignItems:'center'}}>
-          <h2>なめらかチータラとは</h2>
-          <p style={{ fontSize: "12px"}}>
-            スーパーやコンビニエンスストアの<br />
-            冷蔵のチーズコーナーで<br />
-            販売されているチータラ。<br />
-            なめらかな口解け食感。
-          </p>
-        </div>
+      <Typography sx={{ mt: 6, ml: 2, mr: 2, fontSize: "1.3rem", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+      {personalityType === 'なめらかチータラ' && (
+        <>
+          {image && (
+            <img src="/product-nameraka-chitara.png" alt="なめらかチータラ" style={{ width: "100px"}}/>
+          )}
+          <div  style={{ display:'flex',marginLeft: "15px", flexDirection:'column', alignItems:'center'}}>
+            <h2>なめらかチータラとは</h2>
+            <p style={{ fontSize: "12px"}}>
+              スーパーやコンビニエンスストアの<br />
+              冷蔵のチーズコーナーで<br />
+              販売されているチータラ。<br />
+              なめらかな口解け食感。
+            </p>
+          </div>
+        </>
+      )}
+      {personalityType === 'ジャッキーカルパス' && (
+        <>
+          {image && (
+            <img src="/product-jacky-karupasu.png" alt="ジャッキーカルパス" style={{ width: "100px"}}/>
+          )}
+          <div  style={{ display:'flex',marginLeft: "15px", flexDirection:'column', alignItems:'center'}}>
+            <h2>ジャッキーカルパスとは</h2>
+            <p style={{ fontSize: "12px"}}>
+            オリジナルブレンドのスパイスで味付けし、<br/>
+            スモークしたドライソーセージです。<br/>
+            ピリッと効いたスパイスと噛みごたえのある食感がクセになるおいしさです。
+            </p>
+          </div>
+        </>
+      )}
       </Typography>
     </Box>
   );
