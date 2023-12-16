@@ -65,7 +65,7 @@ export default function Home() {
       setShowErrorMessage(true);
     }
   }
-  const fadeInUpAnimation = (delay) => ({
+  const fadeInUpAnimation = (delay: number) => ({
     '@keyframes fadeInUp': {
       '0%': {
         opacity: 0,
@@ -81,7 +81,7 @@ export default function Home() {
   });
 
     // 各行に適用するスタイルを生成
-  const Line = ({ children, delay }) => (
+  const Line = ({ children, delay }: { children: React.ReactNode; delay: number }) => (
     <Typography
       component="span"
       display="block" // 各行をブロック要素にする
