@@ -129,10 +129,10 @@ export default function Home() {
     ) : (
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100vh' }}>
-          <Line delay={0.5}>飲みの場で変浪するあなた、、</Line>
+          <Line delay={0.5}>飲みの場で変貌するあなた、、</Line>
           <Line delay={1.5}>周りからどう映る？</Line>
           <Line delay={2.5}>引かれてしまう前に</Line>
-          <Line delay={3.5}>酒癖名刺を作成して共有しておこう</Line>
+          <Line delay={3.5}>名刺を作成して共有しておこう</Line>
           <Line delay={4.0}><ScrollArrow /></Line>
         </Box>
 
